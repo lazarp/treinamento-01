@@ -1,10 +1,31 @@
-_schema-version: "2.1"
+_schema-version: '3.2'
 ID: treinamento-01
 version: 0.0.1
+
+parameters:
+  enable-parallel-deployments: true
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install --production
+        - npx -p @sap/cds-dk cds build --production
+
 modules:
-- name: db
+- name: treinamento-01-db-deployer
   type: hdb
   path: db
+  build-parameters:
+      ignore:
+        - default-*.json
+        - .env
+        - "*node_modules*"
+        - package-lock.json
+  parameters:
+      buildpack: nodejs_buildpack
+      memory: 256M
+      disk-quota: 1024M
   requires:
   - name: hdi_db
     properties:
