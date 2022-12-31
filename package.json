@@ -1,22 +1,30 @@
 {
   "name": "treinamento-01",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
+  "description": "CAP Project on top of an existing HANA DB Project.",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@sap/cds": "^6",
     "express": "^4",
-    "hdb": "^0.19.0"
+    "hdb": "^0.19.0",
+    "@sap/hana-client": "^2.15.17"
   },
-  "devDependencies": {
-    "sqlite3": "^5.0.4"
+  "engines": {
+    "node": "^16"
   },
   "scripts": {
     "start": "cds run"
   },
   "cds": {
+    "build": {
+      "target": "."
+    },
+    "hana":{
+      "syntax": "hdi",
+      "deploy-format": "hdbtable"
+    },
     "requires": {
       "db": {
         "kind": "hana-cloud"
