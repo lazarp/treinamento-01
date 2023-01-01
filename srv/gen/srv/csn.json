@@ -1,0 +1,224 @@
+{
+  "definitions": {
+    "OPENSAP_MD_EMPLOYEES": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "ID": {
+          "@title": "ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36
+        },
+        "VALIDFROM": {
+          "@title": "VALIDFROM",
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "VALIDTO": {
+          "@title": "VALIDTO",
+          "type": "cds.Timestamp"
+        },
+        "NAMEFIRST": {
+          "@title": "NAMEFIRST",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMEMIDDLE": {
+          "@title": "NAMEMIDDLE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMELAST": {
+          "@title": "NAMELAST",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMEINITIALS": {
+          "@title": "NAMEINITIALS",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SEX": {
+          "@title": "SEX",
+          "type": "cds.String",
+          "length": 1
+        },
+        "LANGUAGE": {
+          "@title": "LANGUAGE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PHONENUMBER": {
+          "@title": "PHONENUMBER",
+          "type": "cds.String",
+          "length": 30
+        },
+        "EMAIL": {
+          "@title": "EMAIL",
+          "type": "cds.String",
+          "length": 255
+        },
+        "LOGINNAME": {
+          "@title": "LOGINNAME",
+          "type": "cds.String",
+          "length": 12
+        },
+        "SALARYAMOUNT": {
+          "@title": "SALARYAMOUNT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "ACCOUNTNUMBER": {
+          "@title": "ACCOUNTNUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BANKID": {
+          "@title": "BANKID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BANKNAME": {
+          "@title": "BANKNAME",
+          "type": "cds.String",
+          "length": 255
+        },
+        "EMPLOYEEPICURL": {
+          "@title": "EMPLOYEEPICURL",
+          "type": "cds.String",
+          "length": 255
+        },
+        "ADDRESS_ID": {
+          "@title": "ADDRESS_ID",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CURRENCY_CODE": {
+          "@title": "CURRENCY_CODE",
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "CatalogService": {
+      "@source": "cat-service.cds",
+      "kind": "service",
+      "@path": "/catalog"
+    },
+    "CatalogService.Employees": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "OPENSAP_MD_EMPLOYEES"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@title": "ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36
+        },
+        "VALIDFROM": {
+          "@title": "VALIDFROM",
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "VALIDTO": {
+          "@title": "VALIDTO",
+          "type": "cds.Timestamp"
+        },
+        "NAMEFIRST": {
+          "@title": "NAMEFIRST",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMEMIDDLE": {
+          "@title": "NAMEMIDDLE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMELAST": {
+          "@title": "NAMELAST",
+          "type": "cds.String",
+          "length": 40
+        },
+        "NAMEINITIALS": {
+          "@title": "NAMEINITIALS",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SEX": {
+          "@title": "SEX",
+          "type": "cds.String",
+          "length": 1
+        },
+        "LANGUAGE": {
+          "@title": "LANGUAGE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PHONENUMBER": {
+          "@title": "PHONENUMBER",
+          "type": "cds.String",
+          "length": 30
+        },
+        "EMAIL": {
+          "@title": "EMAIL",
+          "type": "cds.String",
+          "length": 255
+        },
+        "LOGINNAME": {
+          "@title": "LOGINNAME",
+          "type": "cds.String",
+          "length": 12
+        },
+        "SALARYAMOUNT": {
+          "@title": "SALARYAMOUNT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "ACCOUNTNUMBER": {
+          "@title": "ACCOUNTNUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BANKID": {
+          "@title": "BANKID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BANKNAME": {
+          "@title": "BANKNAME",
+          "type": "cds.String",
+          "length": 255
+        },
+        "EMPLOYEEPICURL": {
+          "@title": "EMPLOYEEPICURL",
+          "type": "cds.String",
+          "length": 255
+        },
+        "ADDRESS_ID": {
+          "@title": "ADDRESS_ID",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CURRENCY_CODE": {
+          "@title": "CURRENCY_CODE",
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.5.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}
