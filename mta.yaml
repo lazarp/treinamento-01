@@ -1,6 +1,6 @@
 _schema-version: '3.1'
 ID: treinamento-01
-version: 1.0.0
+version: 0.0.3
 description: "A simple CAP project."
 parameters:
   enable-parallel-deployments: true
@@ -16,6 +16,8 @@ modules:
     path: srv
     parameters:
       buildpack: nodejs_buildpack
+      disk-quota: 1024M
+      memory: 512M
     build-parameters:
       builder: npm-ci
     provides:
