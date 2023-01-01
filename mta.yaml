@@ -1,6 +1,6 @@
 _schema-version: '3.1'
 ID: treinamento-01
-version: 0.0.3
+version: 0.0.4
 description: "A simple CAP project."
 parameters:
   enable-parallel-deployments: true
@@ -20,6 +20,11 @@ modules:
       memory: 512M
     build-parameters:
       builder: npm-ci
+      ignore:
+          - default-*.json
+          - .env
+          - "*node_modules*"
+          - package-lock.json
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
