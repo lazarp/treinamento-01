@@ -105,10 +105,29 @@
     "CatalogService": {
       "@source": "cat-service.cds",
       "kind": "service",
+      "@requires": "authenticated-user",
       "@path": "/catalog"
     },
     "CatalogService.Employees": {
       "kind": "entity",
+      "@restrict": [
+        {
+          "grant": [
+            "READ"
+          ],
+          "to": [
+            "Viewer"
+          ]
+        },
+        {
+          "grant": [
+            "*"
+          ],
+          "to": [
+            "Admin"
+          ]
+        }
+      ],
       "projection": {
         "from": {
           "ref": [
