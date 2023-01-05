@@ -36,7 +36,8 @@
       "x509"
     ],
     "redirect-uris": [
-      "https://*.applicationstudio.cloud.sap/**"
+      "https://*.applicationstudio.cloud.sap/**",
+      "https://*.cfapps.*.hana.ondemand.com/login/callback"
   ]
   }
 }

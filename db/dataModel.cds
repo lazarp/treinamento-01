@@ -20,3 +20,10 @@ key     VALIDFROM: Timestamp  @title: 'VALIDFROM' ;
         ADDRESS_ID: String(36)  @title: 'ADDRESS_ID' ; 
         CURRENCY_CODE: String(3)  @title: 'CURRENCY_CODE' ; 
 }
+
+@cds.persistence.exists 
+@cds.persistence.calcview 
+Entity CV_SESSION_INFO {
+key     ITEM: String(512)  @title: 'ITEM: ITEM' ; 
+        VALUE: String(512)  @title: 'VALUE: VALUE' ; 
+}

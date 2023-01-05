@@ -102,6 +102,24 @@
         }
       }
     },
+    "CV_SESSION_INFO": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "@cds.persistence.calcview": true,
+      "elements": {
+        "ITEM": {
+          "@title": "ITEM: ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 512
+        },
+        "VALUE": {
+          "@title": "VALUE: VALUE",
+          "type": "cds.String",
+          "length": 512
+        }
+      }
+    },
     "CatalogService": {
       "@source": "cat-service.cds",
       "kind": "service",
@@ -231,6 +249,44 @@
           "@title": "CURRENCY_CODE",
           "type": "cds.String",
           "length": 3
+        }
+      }
+    },
+    "CatalogService.Session_info": {
+      "kind": "entity",
+      "@restrict": [
+        {
+          "grant": [
+            "READ"
+          ],
+          "to": [
+            "Admin"
+          ]
+        }
+      ],
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CV_SESSION_INFO"
+            ]
+          },
+          "columns": [
+            "*"
+          ]
+        }
+      },
+      "elements": {
+        "ITEM": {
+          "@title": "ITEM: ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 512
+        },
+        "VALUE": {
+          "@title": "VALUE: VALUE",
+          "type": "cds.String",
+          "length": 512
         }
       }
     }
