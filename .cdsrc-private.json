@@ -1,5 +1,47 @@
 {
   "requires": {
+    "[development]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "3be766e5trial_subaccount-pedro-avss4wzl",
+          "space": "dev",
+          "instance": "treinamento-01-dev-local",
+          "key": "local-key",
+          "resolved": false
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      },
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "3be766e5trial_subaccount-pedro-avss4wzl",
+          "space": "dev",
+          "instance": "treinamento-01-auth",
+          "key": "default",
+          "resolved": false
+        },
+        "users": {
+          "pedro-01": {
+            "password": "abc",
+            "roles": [
+              "Viewer"
+            ]
+          },
+          "pedro-02": {
+            "password": "abc",
+            "roles": [
+              "Admin"
+            ]
+          }
+        }
+      }
+    },
     "[hybrid]": {
       "db": {
         "binding": {

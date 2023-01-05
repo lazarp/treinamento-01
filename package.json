@@ -36,7 +36,12 @@
         "kind": "hana-cloud"
       },
       "auth": {
-        "kind": "xsuaa"
+        "[production]": {
+          "kind": "xsuaa"
+        },
+        "[development]":{
+          "kind": "basic"
+        }
       },
       "approuter": {
         "kind": "cloudfoundry"
